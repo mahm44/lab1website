@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- css connection setup -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ggr472 lab 1 webpage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <!-- set up top navigation bar to enable a popup when "Report" is pressed  -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ggr472 lab 1</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" id="report" aria-current = "page">Report</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+                <!-- links to external and internal webpages -->
+        <div class="heading">
+            <h1>International Airports in Canada</h1>
+            <p>Canada boasts 13 International Airports accross its provinces <br>
+                Check the link below for a list <br>
+                <!--  external link to wikipedia page of international airports  -->
+                <a target = "_blank" href="https://en.wikipedia.org/wiki/List_of_international_airports_in_Canada">Canada's International Airports</a>
+            </p>
+        </div>
+        <div class="heading">
+            <p>Check this link for a GeoJSON of these points mapped <br>
+                <!-- internal link to GeoJSON file  -->
+                <a target ="_blank" href="C:\Users\mahm4\Desktop\uni\ggr472\labs\lab1\lab1airportMap.geojson">GeoJSON file Code</a>
+            </p>
+        </div>
+  
+        <!-- buttons (yes, no and undo last button press) -->
+        <div class="ground">
+            <div class="row">
+                <div class="col">
+                    <p> Have you been to one of these airports before?</p>
+                    <button type ="button" id ="yes-button">Yes</button>
+                    <button type ="button" id ="no-button">Nope</button>
+                    <button type ="button" id ="undo">Nevermind</button>
+                </div>
+            </div>
+        </div>
+    
+
+        <!-- button counter displays -->
+        <div class="ground">
+            <div class = "row">
+                <p> Have been: 
+                    <span id="count-yes">0</span>
+                </p>
+                <p> Have not been:
+                    <span id="count-no">0</span>
+                </p>
+            </div>
+        </div>
+
+        <div class = "container">
+            <!-- images; first image embedded with an external link to Canada flight paths -->
+            <div class = "row">
+                <div class="col">
+                    <a target = "_blank" href="https://www.flightsfrom.com/AC">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt2aMc2zoO6gWluk851e6vmKvqkyG8TCznUQ&usqp=CAU"
+                        alt="airplane flying over mountains">
+                    </a>
+                    <p>
+                        Click this image for an interactive <br>
+                        map of flight paths and routes from Canada
+                    </p>
+                </div>
+                <div class = "col">
+                    <img src="data:image/jpeg;base64,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" 
+                    alt="cartoon airplane">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- connections to javascript and css files -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
